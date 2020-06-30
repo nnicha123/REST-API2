@@ -12,7 +12,10 @@ const mongoose = require('mongoose')
 // })
 
 // Connect to db
-mongoose.connect('mongodb://localhost/newsuperTest')
+mongoose.connect('mongodb://localhost/newsuperTest',  { 
+    useNewUrlParser: true, 
+    useUnifiedTopology: true 
+  })
 
 mongoose.connection.once('open',function(){
     console.log('Connection has been made, now make fireworks')
